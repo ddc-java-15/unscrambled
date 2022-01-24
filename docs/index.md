@@ -1,22 +1,18 @@
 ## Summary
 
-Replace this paragraph with one or more paragraphs summarizing the purpose and operation of the Android app you propose to develop in this project.
+This game takes a complete image and breaks it down into various numbers of images which it then scrambles in a random order, forcing the user to re-order them correctly to advance.
 
 ## Intended users
 
-Write a bullet list here, including at least 2 different types of intended users. Make it reasonably specific; simply saying "Anyone who likes games" (for example) is not sufficiently specific.
+* Obsessive-compulsive persons who have spare time to game.
 
-For each type of intended user, include at least 1 _user story_. A user story is usually just 1 simple sentence (no more than 2 sentences), in the voice of the intended user, stating a specific task that the user performs using the app, and the benefit that will be obtained. The simplest user stories take the form 
+    > As an OCD person who has a great deal of downtime on the clock due to the nature of my job, I need a game that allows me to indulge my OCD tendencies.
 
-> As a <type of intended user (_who_)> I want to <use of feature or functionality (_what_)> so that <benefit (_why_).
+* Individuals with children who need a short game to entertain their children for a short period, such as waiting in line in public.
 
-Please avoid writing too much for the user story. In particular, if the way the user story is written makes it difficult to see the _who_, _what_, and _why_, then you probably need to re-write it more directly. (On the other hand, a user story should not simply be a re-statement of the intended user description.)
+    > As a stay at home parent, I take my children out with me while running errands, it helps to have a simple game on my mobile device to hand them and keep them quiet until I have finished with my business.
 
-Here is one (silly) example of an intended user, along with a user story. Please note not only the conceptual structure, but the Markdown syntax used.
 
-* People who like to use randomness in their decision making.
-
-    > As someone who enjoys randomness in my life, I need an app that lets me flip a virtual coin or roll one or more virtual dice, so that I can base my decisions on randomness, without having to carry coins or dice in my pockets.
 
 ## Functionality
 

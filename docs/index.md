@@ -16,16 +16,30 @@ This game takes a complete image and breaks it down into various numbers of imag
 
 ## Functionality
 
-List (using a bullet list---or ordered list, if order is relevant) the key functional aspects that will be provided by the app---i.e. tell us what the user will be able to do using the app. This should not simply be a re-statement of the [summary](#summary), but should instead provide a more specific articulation of the functionality and user experience. 
+1. Unlock higher difficulties by completing lower difficulties in a specific timeframe.
+
+2. Keep track of completion times.
+
+3. Unlock game images to use as mobile device backgrounds.
+
+4. Select image themes, such as nature, space, or anime pictures.
+
+5. Darkmode
+
+6. Audio settings
+
+7. Log-in via Facebook
 
 ## Persistent data
 
-List, in general terms and using a bullet list, what content will be stored on the Android device. This should include any information that users of your app would expect to be maintained (i.e. without connection to a server) across multiple sessions of use. 
+* Previous completion times.
+* Current game progress.
+* Current game settings.
     
 ## Device/external services
 
-If the client component will need to access special services of the device (e.g. sensors, contacts, messaging), list them here using a bullet list. Also, if the client component will need to access already-existing external services (e.g. real-time weather data, Open Movie Database, Open Trivia Database), those should also be listed here; any such references to external services should include links to the main page or API description page for the service.
+Post results to Facebook timeline.
 
 ## Stretch goals/possible enhancements 
 
-If you can identify functional elements of the software that you think might not be achievable in the scope of the project, but which would nonetheless add significant value if you were able to include them, list them here. For now, we recommend listing them in order of complexity/amount of work, from the least to the most.
+Send invites and challenges to contacts in your Facebook profile.

@@ -1,3 +1,3 @@
-# Android project proposal starter
+# Unscramble!
 
-This is a project template for all phases&mdash;from proposal to final delivery&mdash;of the personal Android project in the [Deep Dive Coding](https://deepdivecoding.com/) [Java + Android bootcamp](https://deepdivecoding.com/java-android/).
+This is a game where you take scrambled tiles that form an image and re-arrange them into the finished image.

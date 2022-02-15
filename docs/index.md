@@ -1,3 +1,10 @@
+---
+title: Overview
+description: "Game of correctly forming an image from scrambled tiles."
+menu: Overview
+order: 0
+---
+
 ## Summary
 
 This game takes a complete image and breaks it down into various numbers of images which it then

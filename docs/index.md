@@ -1,8 +1,6 @@
 ---
-title: Overview
-description: "Game of correctly forming an image from scrambled tiles."
-menu: Overview
-order: 0
+title: Overview description: "Game of correctly forming an image from scrambled tiles."
+menu: Overview order: 0
 ---
 
 ## Summary
@@ -11,7 +9,9 @@ This game takes a complete image and breaks it down into various numbers of imag
 scrambles in a random order. The split image is placed into a frame with a single open spot, forcing
 the user to re-order them correctly by sliding them around inside the framework in order to advance.
 Advanced settings can be enabled that cause individual tiles to be randomly rotated as well as
-breaking up the order in which they are placed.
+breaking up the order in which they are placed. Additional difficulties and themes are unlocked via
+gameplay, and high scores are stored both locally on the device and uploaded to the application
+server to track overall high scores from the entire playerbase.
 
 ## Intended users
 
@@ -41,11 +41,11 @@ breaking up the order in which they are placed.
 
 4. Select image themes, such as nature, space, or anime pictures.
 
-5. Darkmode
+5. Darkmode.
 
-6. Audio settings (appropriate sounds for each theme set)
+6. Audio settings (appropriate sounds for each theme set).
 
-7. Log-in via Facebook
+7. Log-in via Google.
 
 ## Persistent data
 
@@ -55,9 +55,35 @@ breaking up the order in which they are placed.
 
 ## Device/external services
 
-Post results to Facebook timeline.
+Android Gallery
 
-TBD - find/set up access to appropriate image services
+* https://developer.android.com/reference/android/widget/Gallery
+* Unscrambled uses images from the gallery to load that image for each game instance.
+* The application will not be able to function without access to the Gallery.
+
+Pixabay
+
+* https://pixabay.com/api/docs/
+* Unscrambled uses Pixabay to download theme albums to be available to the player. It stores the
+  downloaded images in the Gallery.
+* The application will be functional without access to Pixabay, but will rely upon images already in
+  the user's Android Gallery.
+
+Android Clock
+
+* https://developer.android.com/reference/kotlin/java/time/Clock?hl=en
+* Unscrambled uses the Android Clock service to track the length of time a game has been played in
+  order to weight the score of the game.
+* The application will function without access to the Android Clock, but any games played without
+  access will not be eligible for placing in the application-wide 'High Scores' listing.
+
+Internet Connectivity
+
+* https://developer.android.com/guide/topics/connectivity
+* Unscrambled uses network connectivity to upload scores to the application-wide 'High Scores'
+  listing and to download images and themes from Pixabay.
+* The application will function without internet connectivity, but will be unable to access new
+  themes or upload scores.
 
 ## Stretch goals/possible enhancements
 

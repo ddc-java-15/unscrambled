@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 
@@ -16,7 +17,8 @@ import androidx.room.PrimaryKey;
             childColumns = {"player_id"},
             onDelete = ForeignKey.CASCADE
         )
-    }
+    },
+    indices = @Index(value = "name", unique = true)
 )
 public class Theme {
 
@@ -25,8 +27,10 @@ public class Theme {
   private long id;
 
   @NonNull
-  @ColumnInfo(name = "theme_name")
   private String name;
+
+  @ColumnInfo(name = "player_id", index = true)
+  private long playerId;
 
   public long getId() {
     return id;
@@ -43,6 +47,14 @@ public class Theme {
 
   public void setName(@NonNull String name) {
     this.name = name;
+  }
+
+  public long getPlayerId() {
+    return playerId;
+  }
+
+  public void setPlayerId(long playerId) {
+    this.playerId = playerId;
   }
 
 }

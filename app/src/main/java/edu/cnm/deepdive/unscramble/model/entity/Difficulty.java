@@ -11,8 +11,7 @@ import androidx.room.PrimaryKey;
         @ForeignKey(
             entity = Player.class,
             parentColumns = {"player_id"},
-            childColumns = {"player_id"},
-            onDelete = ForeignKey.CASCADE
+            childColumns = {"player_id"}
         )
     }
 )
@@ -25,6 +24,9 @@ public class Difficulty {
   @NonNull
   @ColumnInfo(name = "difficulty_name")
   private String difficultyName;
+
+  @ColumnInfo(name = "player_id")
+  private String playerID;
 
   public long getId() {
     return id;
@@ -41,5 +43,13 @@ public class Difficulty {
 
   public void setDifficultyName(@NonNull String difficultyName) {
     this.difficultyName = difficultyName;
+  }
+
+  public String getPlayerID() {
+    return playerID;
+  }
+
+  public void setPlayerID(String playerID) {
+    this.playerID = playerID;
   }
 }

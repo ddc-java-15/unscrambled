@@ -3,10 +3,14 @@ package edu.cnm.deepdive.unscramble.model.entity;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
-import java.util.UUID;
 
-@Entity(tableName = "player")
+
+@Entity(
+    tableName = "player",
+    indices = @Index(value = "player_gamer_tag", unique = true)
+)
 public class Player {
 
   @PrimaryKey(autoGenerate = true)

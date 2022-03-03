@@ -1,11 +1,14 @@
 package edu.cnm.deepdive.unscrambled.service;
 
 import android.app.Application;
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.RoomDatabase.Callback;
 import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 import edu.cnm.deepdive.unscrambled.model.dao.DifficultyDao;
 import edu.cnm.deepdive.unscrambled.model.dao.PlayerDao;
 import edu.cnm.deepdive.unscrambled.model.dao.ScoreDao;
@@ -15,6 +18,7 @@ import edu.cnm.deepdive.unscrambled.model.entity.Player;
 import edu.cnm.deepdive.unscrambled.model.entity.Score;
 import edu.cnm.deepdive.unscrambled.model.entity.Theme;
 import edu.cnm.deepdive.unscrambled.service.UnscrambledDatabase.Converters;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.Date;
 
 @Database(
@@ -48,7 +52,24 @@ public abstract class UnscrambledDatabase extends RoomDatabase {
 
     private static final UnscrambledDatabase INSTANCE = Room
         .databaseBuilder(context, UnscrambledDatabase.class, DB_NAME)
+        //temp code for adding a dummy record to db for testing functionality
+        .addCallback(new UnscrambledDatabase.Callback())
         .build();
+  }
+
+  private static class Callback extends RoomDatabase.Callback {
+
+    @Override
+    public void onCreate(@NonNull SupportSQLiteDatabase db) {
+      super.onCreate(db);
+      Player player = new Player();
+      player.setPlayerGamerTag("gameTester");
+      getInstance()
+          .getPlayerDao()
+          .insert(player)
+          .subscribeOn(Schedulers.io())
+          .subscribe();
+    }
   }
 
   public static class Converters {

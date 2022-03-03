@@ -71,6 +71,10 @@ public class ThemeViewModel extends AndroidViewModel implements DefaultLifecycle
         );
   }
 
+  public void setThemeId(long id) {
+    themeId.setValue(id);
+  }
+
   private void postThrowable(Throwable throwable) {
     Log.e(getClass().getSimpleName(), throwable.getMessage(), throwable);
     this.throwable.postValue(throwable);

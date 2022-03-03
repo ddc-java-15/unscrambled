@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.unscramble;
+package edu.cnm.deepdive.unscrambled;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;

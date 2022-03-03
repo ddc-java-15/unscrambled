@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.unscramble.model.entity;
+package edu.cnm.deepdive.unscrambled.model.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -7,9 +7,7 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-
-@Entity(
-    tableName = "theme",
+@Entity(tableName = "difficulty",
     foreignKeys = {
         @ForeignKey(
             entity = Player.class,
@@ -18,19 +16,20 @@ import androidx.room.PrimaryKey;
             onDelete = ForeignKey.CASCADE
         )
     },
-    indices = @Index(value = "name", unique = true)
+    indices = @Index(value = "difficulty_name", unique = true)
 )
-public class Theme {
+public class Difficulty {
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "theme_id")
+  @ColumnInfo(name = "difficulty_id")
   private long id;
 
   @NonNull
-  private String name;
+  @ColumnInfo(name = "difficulty_name")
+  private String difficultyName;
 
   @ColumnInfo(name = "player_id", index = true)
-  private long playerId;
+  private long playerID;
 
   public long getId() {
     return id;
@@ -41,20 +40,19 @@ public class Theme {
   }
 
   @NonNull
-  public String getName() {
-    return name;
+  public String getDifficultyName() {
+    return difficultyName;
   }
 
-  public void setName(@NonNull String name) {
-    this.name = name;
+  public void setDifficultyName(@NonNull String difficultyName) {
+    this.difficultyName = difficultyName;
   }
 
-  public long getPlayerId() {
-    return playerId;
+  public long getPlayerID() {
+    return playerID;
   }
 
-  public void setPlayerId(long playerId) {
-    this.playerId = playerId;
+  public void setPlayerID(long playerID) {
+    this.playerID = playerID;
   }
-
 }

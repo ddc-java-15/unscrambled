@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.unscramble.model.entity;
+package edu.cnm.deepdive.unscrambled.model.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -11,7 +11,8 @@ import androidx.room.PrimaryKey;
         @ForeignKey(
             entity = Player.class,
             parentColumns = {"player_id"},
-            childColumns = {"player_id"}
+            childColumns = {"player_id"},
+            onDelete = ForeignKey.CASCADE
         )
     }
 )
@@ -24,8 +25,8 @@ public class Score {
   @ColumnInfo(name = "displayed_score", index = true)
   private String displayedScore;
 
-  @ColumnInfo(name = "player_id")
-  private String playerID;
+  @ColumnInfo(name = "player_id", index = true)
+  private long playerId;
 
   public long getId() {
     return id;
@@ -43,11 +44,11 @@ public class Score {
     this.displayedScore = displayedScore;
   }
 
-  public String getPlayerID() {
-    return playerID;
+  public long getPlayerId() {
+    return playerId;
   }
 
-  public void setPlayerID(String playerID) {
-    this.playerID = playerID;
+  public void setPlayerId(long playerId) {
+    this.playerId = playerId;
   }
 }

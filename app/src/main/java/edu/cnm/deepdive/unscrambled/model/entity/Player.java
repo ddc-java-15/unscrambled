@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.unscramble.model.entity;
+package edu.cnm.deepdive.unscrambled.model.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

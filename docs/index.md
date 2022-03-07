@@ -69,8 +69,7 @@ server to track overall high scores from the entire playerbase.
   * Unscrambled uses images from the gallery to load that image for each game instance.
   * The application will not be able to function without access to the Gallery.
 
-- [Google sign_in](https://developers.google.com/identity/sign-in/android/start-integrating)
--
+* [Google sign_in](https://developers.google.com/identity/sign-in/android/start-integrating)
   * Distinguish between users and offer privacy on shared devices.
   * The application can be used without Google Sign In, but scores will not be recorded to the high score database.
 

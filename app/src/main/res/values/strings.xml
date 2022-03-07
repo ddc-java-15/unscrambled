@@ -1,9 +1,16 @@
 <resources>
 
-  <!-- TODO: Remove or change this placeholder text -->
+
   <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="create_theme_label">Create new Theme</string>
   <string name="save_label">Save</string>
   <string name="cancel_label">Cancel</string>
   <string name="information_label">Information</string>
+  <string name="easy_difficulty">Easy</string>
+  <string name="regular_difficulty">Regular</string>
+  <string name="hard_difficulty">Hard</string>
+  <string name="insane_difficulty">Insane!</string>
+  <string name="return_label">Back</string>
+  <string name="difficulty_screen">Difficulty</string>
+  <string name="unscrambled_label">Unscrambled!</string>
 </resources>

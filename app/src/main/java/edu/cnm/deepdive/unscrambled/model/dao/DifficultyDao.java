@@ -45,6 +45,6 @@ public interface DifficultyDao {
   @Query("SELECT * FROM difficulty WHERE difficulty_id = :id")
   LiveData<Difficulty> select(long id);
 
-  @Query("SELECT * FROM difficulty ORDER BY difficulty_name ASC")
+  @Query("SELECT * FROM difficulty ORDER BY difficulty_id ASC")
   LiveData<List<Difficulty>> select();
 }

@@ -34,7 +34,13 @@ public class ThemeDetailsFragment extends BottomSheetDialogFragment {
       Bundle savedInstanceState) {
     super.onCreateView(inflater, container, savedInstanceState);
     binding = FragmentThemeDetailsBinding.inflate(inflater, container, false);
-    //TODO: Attach listeners to controls.
+    binding.save.setOnClickListener((v) -> {
+      //TODO: Set properties of theme from data entry objects.
+
+      viewModel.save(theme);
+      dismiss();
+    });
+    binding.cancel.setOnClickListener((v) -> dismiss());
     return binding.getRoot();
   }
 

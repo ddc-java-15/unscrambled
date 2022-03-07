@@ -2,18 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
-  android:id="@+id/navigation_map">
+  android:id="@+id/navigation_map"
+  app:startDestination="@id/navigation_home">
 
-  <action
-    android:id="@+id/open_details"
-    app:destination="@id/navigation_theme_details">
+  <fragment
+    android:id="@+id/navigation_home"
+    android:name="edu.cnm.deepdive.unscrambled.controller.HomeFragment"
+    tools:layout="@layout/fragment_home"
 
-    <argument
-      android:name="theme_id"
-      app:argType="long"
-      android:defaultValue="0L"/>
+    >
+    <action
+      android:id="@+id/open_details"
+      app:destination="@id/navigation_theme_details">
 
-  </action>
+      <argument
+        android:name="theme_id"
+        app:argType="long"
+        android:defaultValue="0L"/>
+
+    </action>
+  </fragment>
 
   <dialog
     android:id="@+id/navigation_theme_details"

@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import edu.cnm.deepdive.unscrambled.NavigationMapDirections;
 import edu.cnm.deepdive.unscrambled.R;
 import edu.cnm.deepdive.unscrambled.databinding.ActivityMainBinding;
 import edu.cnm.deepdive.unscrambled.viewmodel.ThemeViewModel;
@@ -25,8 +24,5 @@ public class MainActivity extends AppCompatActivity {
     NavController navController = ((NavHostFragment) getSupportFragmentManager()
         .findFragmentById(R.id.nav_host_fragment))
         .getNavController();
-    binding.create.setOnClickListener((v) -> {
-      navController.navigate(NavigationMapDirections.openDetails());
-    });
   }
 }

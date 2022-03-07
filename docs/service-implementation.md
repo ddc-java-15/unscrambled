@@ -20,3 +20,7 @@ order: 30
 * [`ThemeDao`](https://github.com/ddc-java-15/unscrambled/blob/main/app/src/main/java/edu/cnm/deepdive/unscrambled/model/dao/ThemeDao.java)
 * [`DifficultyDao`](https://github.com/ddc-java-15/unscrambled/blob/main/app/src/main/java/edu/cnm/deepdive/unscrambled/model/dao/DifficultyDao.java)
 * [`ScoreDao`](https://github.com/ddc-java-15/unscrambled/blob/main/app/src/main/java/edu/cnm/deepdive/unscrambled/model/dao/ScoreDao.java)
+
+### Database Class
+
+* [`Unscrambled Database`](https://github.com/ddc-java-15/unscrambled/blob/main/app/src/main/java/edu/cnm/deepdive/unscrambled/service/UnscrambledDatabase.java)

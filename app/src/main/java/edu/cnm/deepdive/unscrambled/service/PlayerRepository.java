@@ -57,7 +57,6 @@ public class PlayerRepository {
         .subscribeOn(Schedulers.io());
   }
 
-
 }
 
 

@@ -52,38 +52,43 @@ server to track overall high scores from the entire playerbase.
 * Previous completion times.
 * Current game progress.
 * Current game settings.
+* Personal and all-time high scores.
 
 ## Device/external services
 
-* Android Gallery
 
-  * https://developer.android.com/reference/android/widget/Gallery
-  * Unscrambled uses images from the gallery to load that image for each game instance.
-  * The application will not be able to function without access to the Gallery.
+* [Android Clock](https://developer.android.com/reference/kotlin/java/time/Clock?hl=en)
 
-* Pixabay
-
-  * https://pixabay.com/api/docs/
-  * Unscrambled uses Pixabay to download theme albums to be available to the player. It stores the
-    downloaded images in the Gallery.
-  * The application will be functional without access to Pixabay, but will rely upon images already in
-      the user's Android Gallery.
-
-* Android Clock
-
-  * https://developer.android.com/reference/kotlin/java/time/Clock?hl=en
   * Unscrambled uses the Android Clock service to track the length of time a game has been played in
     order to weight the score of the game.
   * The application will function without access to the Android Clock, but any games played without
     access will not be eligible for placing in the application-wide 'High Scores' listing.
 
-* Internet Connectivity
+* [Android Gallery](https://developer.android.com/reference/android/widget/Gallery)
 
-  * https://developer.android.com/guide/topics/connectivity
+  * Unscrambled uses images from the gallery to load that image for each game instance.
+  * The application will not be able to function without access to the Gallery.
+
+- [Google sign_in](https://developers.google.com/identity/sign-in/android/start-integrating)
+-
+  * Distinguish between users and offer privacy on shared devices.
+  * The application can be used without Google Sign In, but scores will not be recorded to the high score database.
+
+* [Internet Connectivity](https://developer.android.com/guide/topics/connectivity)
+
   * Unscrambled uses network connectivity to upload scores to the application-wide 'High Scores'
     listing and to download images and themes from Pixabay.
   * The application will function without internet connectivity, but will be unable to access new
     themes or upload scores.
+* [Pixabay](https://pixabay.com/api/docs/)
+
+  * Unscrambled uses Pixabay to download theme albums to be available to the player. It stores the
+    downloaded images in the Gallery.
+  * The application will be functional without access to Pixabay, but will rely upon images already in
+      the user's Android Gallery.
+
+
+
 
 ## Stretch goals/possible enhancements
 

@@ -17,6 +17,7 @@ import edu.cnm.deepdive.unscrambled.model.entity.Difficulty;
 import edu.cnm.deepdive.unscrambled.model.entity.Player;
 import edu.cnm.deepdive.unscrambled.model.entity.Score;
 import edu.cnm.deepdive.unscrambled.model.entity.Theme;
+import edu.cnm.deepdive.unscrambled.model.entity.Theme.ThemeName;
 import edu.cnm.deepdive.unscrambled.service.UnscrambledDatabase.Converters;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.Date;
@@ -25,7 +26,7 @@ import java.util.Date;
     entities = {Difficulty.class, Player.class, Score.class, Theme.class},
     version = 1
 )
-@TypeConverters({Converters.class})
+@TypeConverters(value = {Converters.class, Theme.ThemeName.class})
 public abstract class UnscrambledDatabase extends RoomDatabase {
 
   private static final String DB_NAME = "unscrambled-db";

@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
 
   private void handleTheme(Theme theme) {
     if(theme == null) {
-      binding.themeName.setText(String.valueOf(0));
+      binding.themes.setAdapter(String.valueOf(0));
     }
   }
 }

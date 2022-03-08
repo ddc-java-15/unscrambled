@@ -31,16 +31,16 @@ public class ThemeRepository {
 
   public Single<Theme> save(Theme theme) {
     return (
-        (theme.getId() == 0)
+        (theme.getId() > 0)
             ? themeDao
-            .insert(theme)
-            .map((id) -> {
-              theme.setId(id);
-              return theme;
-            })
+            .update(theme)
+            .map((ignored) -> theme)
             : themeDao
-                .update(theme)
-                .map((count) -> theme)
+                .insert(theme)
+                .map((id) -> {
+                  theme.setId(id);
+                  return theme;
+                })
     )
         .subscribeOn(Schedulers.io());
   }

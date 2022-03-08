@@ -14,10 +14,12 @@ public class ThemeAdapter extends RecyclerView.Adapter<Holder> {
 
   private final LayoutInflater inflater;
   private final List<Theme> themes;
+  private Context context;
 
   public ThemeAdapter(Context context, List<Theme> themes) {
     inflater = LayoutInflater.from(context);
     this.themes = themes;
+    this.context = context;
   }
 
   @NonNull
@@ -49,7 +51,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<Holder> {
 
     private void bind(int position) {
       Theme theme = themes.get(position);
-      binding.information.setText(theme.getName());
+      binding.information.setText(String.getThemeName());
     }
 
   }

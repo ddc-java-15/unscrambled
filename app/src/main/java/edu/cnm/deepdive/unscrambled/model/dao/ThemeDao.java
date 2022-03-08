@@ -44,6 +44,6 @@ public interface ThemeDao {
   @Query("SELECT * FROM theme WHERE theme_id = :id")
   LiveData<Theme> select(long id);
 
-  @Query("SELECT * FROM theme ORDER BY name ASC")
+  @Query("SELECT * FROM theme ORDER BY themeName ASC")
   LiveData<List<Theme>> select();
 }

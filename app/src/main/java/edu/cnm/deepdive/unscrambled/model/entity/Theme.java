@@ -18,8 +18,7 @@ import androidx.room.TypeConverter;
             childColumns = {"player_id"},
             onDelete = ForeignKey.CASCADE
         )
-    },
-    indices = @Index(value = "name", unique = true)
+    }
 )
 public class Theme {
 

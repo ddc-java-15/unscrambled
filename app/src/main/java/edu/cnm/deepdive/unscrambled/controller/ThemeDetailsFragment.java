@@ -12,6 +12,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import edu.cnm.deepdive.unscrambled.R;
 import edu.cnm.deepdive.unscrambled.databinding.FragmentThemeDetailsBinding;
 import edu.cnm.deepdive.unscrambled.model.entity.Theme;
+import edu.cnm.deepdive.unscrambled.model.entity.Theme.ThemeName;
 import edu.cnm.deepdive.unscrambled.viewmodel.ThemeViewModel;
 
 public class ThemeDetailsFragment extends BottomSheetDialogFragment {
@@ -36,7 +37,7 @@ public class ThemeDetailsFragment extends BottomSheetDialogFragment {
     binding = FragmentThemeDetailsBinding.inflate(inflater, container, false);
     binding.save.setOnClickListener((v) -> {
       theme.setPlayerId(1);//fixme use currently logged in user info.
-      theme.setName(binding.information.getText().toString().trim());
+      theme.setThemeName(ThemeName.valueOf(binding.information.getText().toString().trim()));
       viewModel.save(theme);
       dismiss();
     });

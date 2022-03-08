@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "03f7060e0901efcc9840d1e043fcd3ba",
+    "identityHash": "45d1f26971ffc090f97a9dcd9b320ff1",
     "entities": [
       {
         "tableName": "difficulty",
@@ -168,7 +168,7 @@
       },
       {
         "tableName": "theme",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`theme_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `player_id` INTEGER NOT NULL, FOREIGN KEY(`player_id`) REFERENCES `player`(`player_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`theme_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `themeName` INTEGER NOT NULL, `player_id` INTEGER NOT NULL, FOREIGN KEY(`player_id`) REFERENCES `player`(`player_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -177,9 +177,9 @@
             "notNull": true
           },
           {
-            "fieldPath": "name",
-            "columnName": "name",
-            "affinity": "TEXT",
+            "fieldPath": "themeName",
+            "columnName": "themeName",
+            "affinity": "INTEGER",
             "notNull": true
           },
           {
@@ -196,15 +196,6 @@
           "autoGenerate": true
         },
         "indices": [
-          {
-            "name": "index_theme_name",
-            "unique": true,
-            "columnNames": [
-              "name"
-            ],
-            "orders": [],
-            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_theme_name` ON `${TABLE_NAME}` (`name`)"
-          },
           {
             "name": "index_theme_player_id",
             "unique": false,
@@ -233,7 +224,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '03f7060e0901efcc9840d1e043fcd3ba')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '45d1f26971ffc090f97a9dcd9b320ff1')"
     ]
   }
 }

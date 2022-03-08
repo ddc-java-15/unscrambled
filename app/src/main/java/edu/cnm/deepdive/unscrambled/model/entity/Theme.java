@@ -6,6 +6,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverter;
 
 
 @Entity(
@@ -27,10 +28,12 @@ public class Theme {
   private long id;
 
   @NonNull
-  private String name;
+  private ThemeName themeName;
 
   @ColumnInfo(name = "player_id", index = true)
   private long playerId;
+
+
 
   public long getId() {
     return id;
@@ -41,12 +44,29 @@ public class Theme {
   }
 
   @NonNull
-  public String getName() {
-    return name;
+  public ThemeName getThemeName() {
+    return themeName;
   }
 
-  public void setName(@NonNull String name) {
-    this.name = name;
+  public void setThemeName(@NonNull ThemeName themeName) {
+    this.themeName = themeName;
+  }
+
+  public enum ThemeName {
+    NATURE,
+    FRACTALS,
+    MARVEL,
+    CLASSIC_ART;
+
+    @TypeConverter
+    public static Integer themeNameToInteger(ThemeName name) {
+      return (name != null) ? name.ordinal() : null;
+    }
+
+    @TypeConverter
+    public static ThemeName integerToThemeName(Integer index) {
+      return (index != null) ? ThemeName.values()[index] : null;
+    }
   }
 
   public long getPlayerId() {

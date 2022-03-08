@@ -13,4 +13,9 @@
   <string name="return_label">Back</string>
   <string name="difficulty_screen">Difficulty</string>
   <string name="unscrambled_label">Unscrambled!</string>
+  <string name="theme_screen">Theme</string>
+  <string name="nature_theme">Nature</string>
+  <string name="classic_art_theme">Classic Art</string>
+  <string name="fractals_theme">Fractals</string>
+  <string name="marvel_theme">Marvel</string>
 </resources>

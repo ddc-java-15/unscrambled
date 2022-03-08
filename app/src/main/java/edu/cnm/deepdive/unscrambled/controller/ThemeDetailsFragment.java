@@ -35,8 +35,8 @@ public class ThemeDetailsFragment extends BottomSheetDialogFragment {
     super.onCreateView(inflater, container, savedInstanceState);
     binding = FragmentThemeDetailsBinding.inflate(inflater, container, false);
     binding.save.setOnClickListener((v) -> {
-      //TODO: Set properties of theme from data entry objects.
-
+      theme.setPlayerId(1);//fixme use currently logged in user info.
+      theme.setName(binding.information.getText().toString().trim());
       viewModel.save(theme);
       dismiss();
     });

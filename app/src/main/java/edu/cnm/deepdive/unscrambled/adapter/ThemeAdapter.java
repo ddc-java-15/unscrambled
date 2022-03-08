@@ -12,14 +12,14 @@ import java.util.List;
 
 public class ThemeAdapter extends RecyclerView.Adapter<Holder> {
 
-  private final LayoutInflater inflater;
   private final List<Theme> themes;
   private Context context;
+  private final LayoutInflater inflater;
 
   public ThemeAdapter(Context context, List<Theme> themes) {
-    inflater = LayoutInflater.from(context);
     this.themes = themes;
     this.context = context;
+    inflater = LayoutInflater.from(context);
   }
 
   @NonNull
@@ -47,13 +47,12 @@ public class ThemeAdapter extends RecyclerView.Adapter<Holder> {
     public Holder(@NonNull ItemThemeBinding binding) {
       super(binding.getRoot());
       this.binding = binding;
+      binding.getRoot();
     }
 
     private void bind(int position) {
       Theme theme = themes.get(position);
-      binding.information.setText(String.getThemeName());
+      binding.information.setText(theme.toString());
     }
-
   }
-
 }

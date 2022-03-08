@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import edu.cnm.deepdive.unscrambled.adapter.ThemeAdapter;
 import edu.cnm.deepdive.unscrambled.databinding.FragmentHomeBinding;
 import edu.cnm.deepdive.unscrambled.model.entity.Theme;
 import edu.cnm.deepdive.unscrambled.viewmodel.ThemeViewModel;
@@ -18,11 +19,13 @@ public class HomeFragment extends Fragment {
 
   private FragmentHomeBinding binding;
   private ThemeViewModel viewModel;
+  private ThemeAdapter themeAdapter;
 
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
+
     super.onCreateView(inflater, container, savedInstanceState);
     binding = FragmentHomeBinding.inflate(inflater, container, false);
     binding.create.setOnClickListener((v) -> {
@@ -50,7 +53,7 @@ public class HomeFragment extends Fragment {
 
   private void handleTheme(Theme theme) {
     if(theme == null) {
-      binding.themes.setAdapter(String.valueOf(0));
+      binding.themes.setAdapter(themeAdapter);
     }
   }
 }

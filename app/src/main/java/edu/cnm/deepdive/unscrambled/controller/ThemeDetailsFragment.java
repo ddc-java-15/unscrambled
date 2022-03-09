@@ -1,6 +1,8 @@
 package edu.cnm.deepdive.unscrambled.controller;
 
 import android.os.Bundle;
+import android.view.View.OnClickListener;
+import android.widget.RadioButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -15,12 +17,13 @@ import edu.cnm.deepdive.unscrambled.model.entity.Theme;
 import edu.cnm.deepdive.unscrambled.model.entity.Theme.ThemeName;
 import edu.cnm.deepdive.unscrambled.viewmodel.ThemeViewModel;
 
-public class ThemeDetailsFragment extends BottomSheetDialogFragment {
+public class ThemeDetailsFragment extends BottomSheetDialogFragment implements OnClickListener {
 
   private FragmentThemeDetailsBinding binding;
   private ThemeViewModel viewModel;
   private long themeId;
   private Theme theme;
+  private ThemeName themeName;
 
 
   @Override
@@ -36,8 +39,9 @@ public class ThemeDetailsFragment extends BottomSheetDialogFragment {
     super.onCreateView(inflater, container, savedInstanceState);
     binding = FragmentThemeDetailsBinding.inflate(inflater, container, false);
     binding.save.setOnClickListener((v) -> {
+      theme = new Theme();
       theme.setPlayerId(1);//fixme use currently logged in user info.
-      theme.setThemeName(ThemeName.valueOf(binding.information.getText().toString().trim()));
+      theme.setThemeName(themeName);
       viewModel.save(theme);
       dismiss();
     });
@@ -59,6 +63,43 @@ public class ThemeDetailsFragment extends BottomSheetDialogFragment {
       viewModel.setThemeId(themeId);
     } else {
       theme = new Theme();
+    }
+
+    setThemeName();
+
+  }
+
+  private void setThemeName() {
+    binding.nature.setOnClickListener(this);
+    binding.classicArt.setOnClickListener(this);
+    binding.fractal.setOnClickListener(this);
+    binding.marvel.setOnClickListener(this);
+  }
+
+  @Override
+  public void onClick(View view) {
+    boolean checked = ((RadioButton) view).isChecked();
+    switch (view.getId()) {
+      case R.id.nature:
+        if (checked) {
+          themeName = ThemeName.NATURE;
+        }
+        break;
+      case R.id.classic_art:
+        if (checked) {
+          themeName = ThemeName.CLASSIC_ART;
+        }
+        break;
+      case R.id.fractal:
+        if (checked) {
+          themeName = ThemeName.FRACTALS;
+        }
+        break;
+      case R.id.marvel:
+        if (checked) {
+          themeName = ThemeName.MARVEL;
+        }
+        break;
     }
   }
 }

@@ -52,10 +52,10 @@ public class Theme {
   }
 
   public enum ThemeName {
-    NATURE,
+    CLASSIC_ART,
     FRACTALS,
     MARVEL,
-    CLASSIC_ART;
+    NATURE;
 
     @TypeConverter
     public static Integer themeNameToInteger(ThemeName name) {

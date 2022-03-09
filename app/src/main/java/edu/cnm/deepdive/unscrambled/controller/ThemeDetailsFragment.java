@@ -5,7 +5,6 @@ import android.view.View.OnClickListener;
 import android.widget.RadioButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,27 +69,22 @@ public class ThemeDetailsFragment extends BottomSheetDialogFragment implements O
   }
 
   private void setThemeName() {
-    binding.nature.setOnClickListener(this);
     binding.classicArt.setOnClickListener(this);
-    binding.fractal.setOnClickListener(this);
+    binding.fractals.setOnClickListener(this);
     binding.marvel.setOnClickListener(this);
+    binding.nature.setOnClickListener(this);
   }
 
   @Override
   public void onClick(View view) {
     boolean checked = ((RadioButton) view).isChecked();
     switch (view.getId()) {
-      case R.id.nature:
-        if (checked) {
-          themeName = ThemeName.NATURE;
-        }
-        break;
       case R.id.classic_art:
         if (checked) {
           themeName = ThemeName.CLASSIC_ART;
         }
         break;
-      case R.id.fractal:
+      case R.id.fractals:
         if (checked) {
           themeName = ThemeName.FRACTALS;
         }
@@ -98,6 +92,11 @@ public class ThemeDetailsFragment extends BottomSheetDialogFragment implements O
       case R.id.marvel:
         if (checked) {
           themeName = ThemeName.MARVEL;
+        }
+        break;
+      case R.id.nature:
+        if (checked) {
+          themeName = ThemeName.NATURE;
         }
         break;
     }

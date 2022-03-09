@@ -17,8 +17,8 @@
       android:src="@drawable/ic_check"
       android:background="?android:selectableItemBackgroundBorderless"
       android:tint="#ff00A000"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/theme_selector"
+      app:layout_constraintStart_toStartOf="@id/theme_selector"
       android:contentDescription="@string/save_label"
       android:tooltipText="@string/save_label"/>
 
@@ -36,6 +36,18 @@
       android:tooltipText="@string/cancel_label"/>
 
 <!--    TODO Add objects for the required properties of a theme.-->
+
+  <TextView
+    android:id="@+id/application_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/unscrambled_label"
+    android:textSize="60sp"
+    android:textStyle="italic|bold"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
       android:id="@+id/theme_label"
       android:layout_width="wrap_content"
@@ -44,7 +56,7 @@
       android:textSize="40sp"
       android:textStyle="bold"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/application_name"
       app:layout_constraintEnd_toEndOf="parent"/>
 
 <!--  <androidx.constraintlayout.widget.Barrier-->
@@ -55,17 +67,11 @@
       android:id="@+id/theme_selector"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      app:layout_constraintTop_toBottomOf="@id/theme_label"
+      app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent">
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent">
 
-      <RadioButton
-        android:id="@+id/nature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nature_theme"
-        android:textSize="25sp"
-        android:padding="8dp"/>
 
       <RadioButton
         android:id="@+id/classic_art"
@@ -74,17 +80,15 @@
         android:text="@string/classic_art_theme"
         android:textSize="25sp"
         android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/nature"/>
-
+        app:layout_constraintTop_toBottomOf="@id/theme_label"/>
       <RadioButton
-        android:id="@+id/fractal"
+        android:id="@+id/fractals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fractals_theme"
         android:textSize="25sp"
         android:padding="8dp"
         app:layout_constraintTop_toBottomOf="@id/classic_art"/>
-
       <RadioButton
         android:id="@+id/marvel"
         android:layout_width="wrap_content"
@@ -92,7 +96,16 @@
         android:text="@string/marvel_theme"
         android:textSize="25sp"
         android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/fractal"/>
+        app:layout_constraintTop_toBottomOf="@id/fractals"/>
+      <RadioButton
+        android:id="@+id/nature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nature_theme"
+        android:textSize="25sp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/marvel"/>
+
     </RadioGroup>
 
 
